@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/sectionsFragment">
+
+    <fragment
+        android:id="@+id/sectionsFragment"
+        android:name="com.example.lab1.fragments.SectionsFragment"
+        android:label="fragment_sections"
+        tools:layout="@layout/fragment_sections" >
+        <action
+            android:id="@+id/action_sectionsFragment_to_teacherSectionFragment"
+            app:destination="@id/teacherSectionFragment" />
+        <action
+            android:id="@+id/action_sectionsFragment_to_studentsSectionFragment"
+            app:destination="@id/studentsSectionFragment" />
+        <action
+            android:id="@+id/action_sectionsFragment_to_statisticsSectionFragment"
+            app:destination="@id/statisticsSectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/teacherSectionFragment"
+        android:name="com.example.lab1.fragments.TeacherSectionFragment"
+        android:label="fragment_teacher_section"
+        tools:layout="@layout/fragment_teacher_section" >
+        <action
+            android:id="@+id/action_teacherSectionFragment_to_addExamFragment"
+            app:destination="@id/addExamFragment" />
+        <action
+            android:id="@+id/action_teacherSectionFragment_to_viewExamsFragment"
+            app:destination="@id/viewExamsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addExamFragment"
+        android:name="com.example.lab1.fragments.AddExamFragment"
+        android:label="fragment_add_exam"
+        tools:layout="@layout/fragment_add_exam" >
+        <action
+            android:id="@+id/action_addExamFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewExamsFragment"
+        android:name="com.example.lab1.fragments.ViewExamsFragment"
+        android:label="fragment_view_exams"
+        tools:layout="@layout/fragment_view_exams" >
+        <action
+            android:id="@+id/action_viewExamsFragment_to_examFragment"
+            app:destination="@id/examFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/examFragment"
+        android:name="com.example.lab1.fragments.ExamFragment"
+        android:label="fragment_exam"
+        tools:layout="@layout/fragment_exam" >
+        <action
+            android:id="@+id/action_examFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment" />
+        <argument
+            android:name="currentExam"
+            app:argType="com.example.lab1.model.Exam" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentsSectionFragment"
+        android:name="com.example.lab1.fragments.StudentsSectionFragment"
+        android:label="fragment_students_section"
+        tools:layout="@layout/fragment_students_section" >
+        <action
+            android:id="@+id/action_studentsSectionFragment_to_viewDraftsFragment"
+            app:destination="@id/viewDraftsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewDraftsFragment"
+        android:name="com.example.lab1.fragments.ViewDraftsFragment"
+        android:label="fragment_view_drafts"
+        tools:layout="@layout/fragment_view_drafts" >
+        <action
+            android:id="@+id/action_viewDraftsFragment_to_joinExamFragment"
+            app:destination="@id/joinExamFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/joinExamFragment"
+        android:name="com.example.lab1.fragments.JoinExamFragment"
+        android:label="fragment_join_exam"
+        tools:layout="@layout/fragment_join_exam" >
+        <action
+            android:id="@+id/action_joinExamFragment_to_studentsSectionFragment"
+            app:destination="@id/studentsSectionFragment" />
+        <argument
+            android:name="currentDraft"
+            app:argType="com.example.lab1.model.Exam" />
+    </fragment>
+    <fragment
+        android:id="@+id/statisticsSectionFragment"
+        android:name="com.example.lab1.fragments.StatisticsSectionFragment"
+        android:label="fragment_statistics_section"
+        tools:layout="@layout/fragment_statistics_section" >
+        <action
+            android:id="@+id/action_statisticsSectionFragment_to_viewByGroupFragment"
+            app:destination="@id/viewByGroupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewByGroupFragment"
+        android:name="com.example.lab1.fragments.ViewByGroupFragment"
+        android:label="fragment_view_by_group"
+        tools:layout="@layout/fragment_view_by_group" >
+        <action
+            android:id="@+id/action_viewByGroupFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment" />
+    </fragment>
+</navigation>

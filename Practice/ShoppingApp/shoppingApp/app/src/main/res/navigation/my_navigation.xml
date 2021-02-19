@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/sectionsFragment">
+
+    <fragment
+        android:id="@+id/sectionsFragment"
+        android:name="com.example.lab1.fragments.SectionsFragment"
+        android:label="fragment_sections"
+        tools:layout="@layout/fragment_sections" >
+        <action
+            android:id="@+id/action_sectionsFragment_to_firstSectionFragment"
+            app:destination="@id/firstSectionFragment" />
+        <action
+            android:id="@+id/action_sectionsFragment_to_secondSectionFragment"
+            app:destination="@id/secondSectionFragment" />
+        <action
+            android:id="@+id/action_sectionsFragment_to_viewTo10Fragment"
+            app:destination="@id/viewTo10Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstSectionFragment"
+        android:name="com.example.lab1.fragments.FirstSection.FirstSectionFragment"
+        android:label="fragment_first_section"
+        tools:layout="@layout/fragment_first_section" >
+        <action
+            android:id="@+id/action_firstSectionFragment_to_addEntityFragment"
+            app:destination="@id/addEntityFragment" />
+        <action
+            android:id="@+id/action_firstSectionFragment_to_viewEntitiesFragment"
+            app:destination="@id/viewEntitiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEntityFragment"
+        android:name="com.example.lab1.fragments.FirstSection.AddEntityFragment"
+        android:label="fragment_add_entity"
+        tools:layout="@layout/fragment_add_entity" >
+        <action
+            android:id="@+id/action_addEntityFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewEntitiesFragment"
+        android:name="com.example.lab1.fragments.FirstSection.ViewEntitiesFragment"
+        android:label="fragment_view_entities"
+        tools:layout="@layout/fragment_view_entities" >
+        <action
+            android:id="@+id/action_viewEntitiesFragment_to_updateEntityFragment"
+            app:destination="@id/updateEntityFragment" />
+        <argument
+            android:name="currentEntity"
+            app:argType="com.example.lab1.model.Entity" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateEntityFragment"
+        android:name="com.example.lab1.fragments.FirstSection.UpdateEntityFragment"
+        android:label="fragment_update_entity"
+        tools:layout="@layout/fragment_update_entity" >
+        <action
+            android:id="@+id/action_updateEntityFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment" />
+        <argument android:name="currentEntity"
+            app:argType="com.example.lab1.model.Entity" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondSectionFragment"
+        android:name="com.example.lab1.fragments.SecondSection.SecondSectionFragment"
+        android:label="fragment_second_section"
+        tools:layout="@layout/fragment_second_section" >
+        <action
+            android:id="@+id/action_secondSectionFragment_to_buyItemFragment"
+            app:destination="@id/buyItemFragment" />
+        <action
+            android:id="@+id/action_secondSectionFragment_to_buyItemFragment2"
+            app:destination="@id/buyItemFragment" />
+        <argument
+            android:name="currentEntity"
+            app:argType="com.example.lab1.model.Entity" />
+    </fragment>
+    <fragment
+        android:id="@+id/buyItemFragment"
+        android:name="com.example.lab1.fragments.SecondSection.BuyItemFragment"
+        android:label="fragment_buy_item"
+        tools:layout="@layout/fragment_buy_item" >
+        <argument
+            android:name="currentEntity"
+            app:argType="com.example.lab1.model.Entity" />
+        <action
+            android:id="@+id/action_buyItemFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewTo10Fragment"
+        android:name="com.example.lab1.fragments.ThirdSection.ViewTo10Fragment"
+        android:label="fragment_view_to10"
+        tools:layout="@layout/fragment_view_to10" />
+</navigation>

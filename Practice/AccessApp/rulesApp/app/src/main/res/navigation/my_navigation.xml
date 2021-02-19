@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/sectionsFragment">
+
+    <fragment
+        android:id="@+id/sectionsFragment"
+        android:name="com.example.lab1.fragments.SectionsFragment"
+        android:label="fragment_sections"
+        tools:layout="@layout/fragment_sections" >
+        <action
+            android:id="@+id/action_sectionsFragment_to_firstSectionFragment"
+            app:destination="@id/firstSectionFragment" />
+        <action
+            android:id="@+id/action_sectionsFragment_to_secondSectionFragment"
+            app:destination="@id/secondSectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstSectionFragment"
+        android:name="com.example.lab1.fragments.FirstSection.FirstSectionFragment"
+        android:label="fragment_first_section"
+        tools:layout="@layout/fragment_first_section" >
+        <action
+            android:id="@+id/action_firstSectionFragment_to_addEntityFragment"
+            app:destination="@id/addEntityFragment" />
+        <action
+            android:id="@+id/action_firstSectionFragment_to_viewEntitiesFragment"
+            app:destination="@id/viewEntitiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEntityFragment"
+        android:name="com.example.lab1.fragments.FirstSection.AddEntityFragment"
+        android:label="fragment_add_entity"
+        tools:layout="@layout/fragment_add_entity" >
+        <action
+            android:id="@+id/action_addEntityFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewEntitiesFragment"
+        android:name="com.example.lab1.fragments.FirstSection.ViewEntitiesFragment"
+        android:label="fragment_view_entities"
+        tools:layout="@layout/fragment_view_entities" >
+        <action
+            android:id="@+id/action_viewEntitiesFragment_to_updateEntityFragment"
+            app:destination="@id/updateEntityFragment" />
+        <argument
+            android:name="currentEntity"
+            app:argType="com.example.lab1.model.Entity" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateEntityFragment"
+        android:name="com.example.lab1.fragments.FirstSection.UpdateEntityFragment"
+        android:label="fragment_update_entity"
+        tools:layout="@layout/fragment_update_entity" >
+        <action
+            android:id="@+id/action_updateEntityFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment" />
+        <argument android:name="currentEntity"
+            app:argType="com.example.lab1.model.Entity" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondSectionFragment"
+        android:name="com.example.lab1.fragments.SecondSection.SecondSectionFragment"
+        android:label="fragment_second_section"
+        tools:layout="@layout/fragment_second_section" >
+        <action
+            android:id="@+id/action_secondSectionFragment_to_viewInRangeFragment"
+            app:destination="@id/viewInRangeFragment" />
+        <action
+            android:id="@+id/action_secondSectionFragment_to_viewByLevelFragment"
+            app:destination="@id/viewByLevelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewInRangeFragment"
+        android:name="com.example.lab1.fragments.SecondSection.ViewInRangeFragment"
+        android:label="fragment_view_in_range"
+        tools:layout="@layout/fragment_view_in_range" >
+        <action
+            android:id="@+id/action_viewInRangeFragment_to_viewEntitesByRangeFragment"
+            app:destination="@id/viewEntitesByRangeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewEntitesByRangeFragment"
+        android:name="com.example.lab1.fragments.SecondSection.ViewEntitesByRangeFragment"
+        android:label="fragment_view_entites_by_range"
+        tools:layout="@layout/fragment_view_entites_by_range" >
+        <action
+            android:id="@+id/action_viewEntitesByRangeFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewByLevelFragment"
+        android:name="com.example.lab1.fragments.SecondSection.ViewByLevelFragment"
+        android:label="fragment_view_by_level"
+        tools:layout="@layout/fragment_view_by_level" >
+        <action
+            android:id="@+id/action_viewByLevelFragment_to_viewEntitiesByLevelFragment"
+            app:destination="@id/viewEntitiesByLevelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewEntitiesByLevelFragment"
+        android:name="com.example.lab1.fragments.SecondSection.ViewEntitiesByLevelFragment"
+        android:label="fragment_view_entities_by_level"
+        tools:layout="@layout/fragment_view_entities_by_level" >
+        <action
+            android:id="@+id/action_viewEntitiesByLevelFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment" />
+    </fragment>
+</navigation>
